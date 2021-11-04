@@ -8,6 +8,4 @@ const Header: NextPage = () => {
   )
 }
 
-export async 
-
 export default Header

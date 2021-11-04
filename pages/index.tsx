@@ -1,14 +1,31 @@
 import type { NextPage } from 'next'
-import Header from '../src/components/Header'
-import Body from '../src/components/Body'
+import Header from '../components/Header'
+import Body from '../components/Body'
+import axios from 'axios'
 
-const Home: NextPage = () => {
+interface Props {
+  result: string
+}
+
+const Home = ({result}: Props) => {
+  console.log(result)
   return (
     <div>
-      <Header />
-      <Body />
+      { result}
     </div>
   )
 }
+
+export async function getStaticProps() {
+  const result = await axios.get('https://api.kanye.rest')
+
+  return {
+    props: {
+      result: result.data.quote
+    },
+    revalidate: 5
+  }
+}
+
 
 export default Home
