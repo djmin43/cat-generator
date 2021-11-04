@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import {QuoteProps} from '../constants/types'
 import Header from '../components/Header'
+import ImageBoard from '../components/ImageBoard'
 import axios from 'axios'
 
 
@@ -10,6 +11,7 @@ const Home = ({quote}: QuoteProps) => {
       <Header
         quote={quote}
       />
+      <ImageBoard />
     </div>
   )
 }
@@ -21,7 +23,7 @@ export async function getStaticProps() {
     props: {
       quote: result.data.quote
     },
-    revalidate: 5
+    revalidate: 60 * 60
   }
 }
 
