@@ -1,17 +1,15 @@
 import type { NextPage } from 'next'
+import {QuoteProps} from '../constants/types'
 import Header from '../components/Header'
-import Body from '../components/Body'
 import axios from 'axios'
 
-interface Props {
-  result: string
-}
 
-const Home = ({result}: Props) => {
-  console.log(result)
+const Home = ({quote}: QuoteProps) => {
   return (
     <div>
-      { result}
+      <Header
+        quote={quote}
+      />
     </div>
   )
 }
@@ -21,7 +19,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      result: result.data.quote
+      quote: result.data.quote
     },
     revalidate: 5
   }
