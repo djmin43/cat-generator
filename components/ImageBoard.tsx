@@ -12,4 +12,9 @@ const ImageBoard = () => {
   )
 }
 
+
+const getCatImage = async (text: string): string => {
+  
+}
+
 export default ImageBoard
