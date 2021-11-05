@@ -1,18 +1,13 @@
 import type { NextPage } from 'next'
 import {QuoteProps} from '../constants/types'
-import Header from '../components/Header'
-import ImageBoard from '../components/ImageBoard'
+import Main from '../components/Main'
 import axios from 'axios'
-
 
 const Home = ({quote}: QuoteProps) => {
   return (
-    <div>
-      <Header
-        quote={quote}
-      />
-      <ImageBoard />
-    </div>
+    <Main
+      quote={quote}
+    />
   )
 }
 

@@ -2,29 +2,25 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { css } from '@emotion/css'
 
+interface CatImageProps {
+  catImage: string
+}
 
-
-const ImageBoard = () => {
-
-  const [catImage, setCatImage] = useState('')
+const ImageBoard = ({catImage}: CatImageProps) => {
 
   return (
     <div className={imageContainerStyle}>
-      <Image src="https://cataas.com/cat" alt="cat" layout="fill" objectFit="contain"/>
+      <img src={catImage} alt="cat" />
     </div>
   )
 }
 
-
-// const getCatImage = async (text: string): void => {
-  
-// }
-
-
 const imageContainerStyle = css`
-  width: 15vw;
-  height: 15vw;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100vw;
+  height: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export default ImageBoard
