@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { css } from '@emotion/css'
 
 interface CatImageProps {
