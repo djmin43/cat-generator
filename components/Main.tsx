@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import ImageBoard from './ImageBoard'
 import Header from './Header'
-import Input from './Input'
 import { QuoteProps } from '../constants/types'
 
 const Main = ({quote}: QuoteProps) => {
 
-  const [catImage, setCatImage] = useState('https://cataas.com/cat/says/hello')
+  const [catImage, setCatImage] = useState(`https://cataas.com/cat/says/${quote}`)
 
-  const getCatImage = async (text: string) => {
-    const catImageQueryString = `https://cataas.com/cat/says/${text}`
+  const getCatImage = () => {
+    const catImageQueryString = `https://cataas.com/cat/says/${quote}`
     setCatImage(catImageQueryString)
   }
 
@@ -18,10 +17,8 @@ const Main = ({quote}: QuoteProps) => {
       <Header
         quote={quote}
       />
-      <ImageBoard
-        catImage={catImage}
-      />
-      <button className={inputButtonStyle} onClick={handleButtonClick}>
+      <img src={catImage} alt="cat"/>
+      <button onClick={() => getCatImage()}>
           고양이만들기
       </button>
     </div>

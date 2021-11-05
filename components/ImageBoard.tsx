@@ -11,7 +11,6 @@ const ImageBoard = ({catImage}: CatImageProps) => {
   return (
     <div>
       <div>
-        <Image src={catImage} alt="cat" layout="responsive" width={300} height={300}/>
       </div>
     </div>
   )
