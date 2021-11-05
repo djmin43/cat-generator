@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { css } from '@emotion/css'
+import Image from 'next/image'
 
 interface CatImageProps {
   catImage: string
@@ -8,8 +9,10 @@ interface CatImageProps {
 const ImageBoard = ({catImage}: CatImageProps) => {
 
   return (
-    <div className={imageContainerStyle}>
-      <img src={catImage} alt="cat" />
+    <div>
+      <div>
+        <Image src={catImage} alt="cat" layout="responsive" width={300} height={300}/>
+      </div>
     </div>
   )
 }

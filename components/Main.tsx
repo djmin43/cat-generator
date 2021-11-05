@@ -6,10 +6,10 @@ import { QuoteProps } from '../constants/types'
 
 const Main = ({quote}: QuoteProps) => {
 
-  const [catImage, setCatImage] = useState('')
+  const [catImage, setCatImage] = useState('https://cataas.com/cat/says/hello')
 
   const getCatImage = async (text: string) => {
-    const catImageQueryString = `/cat/says/:${text}`
+    const catImageQueryString = `https://cataas.com/cat/says/${text}`
     setCatImage(catImageQueryString)
   }
 
@@ -21,9 +21,9 @@ const Main = ({quote}: QuoteProps) => {
       <ImageBoard
         catImage={catImage}
       />
-      <Input
-        getCatImage={getCatImage}
-      />
+      <button className={inputButtonStyle} onClick={handleButtonClick}>
+          고양이만들기
+      </button>
     </div>
   )
 }
